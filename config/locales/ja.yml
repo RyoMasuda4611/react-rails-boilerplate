@@ -1,0 +1,11 @@
+ja:
+  errors:
+    messages:
+      unauthorized: '権限がありません'
+    models:
+      user:
+        password:
+          invalid_password: '8文字以上の英数字で、大文字、小文字、数字、記号を含む必要があります'
+  time:
+    formats:
+      date: "%Y-%m-%d"

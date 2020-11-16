@@ -5,7 +5,7 @@
 #  id              :bigint           not null, primary key
 #  auth_token      :string           not null
 #  email           :string           not null
-#  name            :string           not null
+#  name            :string
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
