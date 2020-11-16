@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '2.7.1'
 
@@ -33,6 +33,9 @@ gem 'action_policy'
 gem 'active_model_serializers', '~> 0.10.0'
 # User authentication
 gem 'knock', '~> 2.1.1'
+# multi langages
+gem 'rails-i18n', '~> 6.0.0'
+# to create seed data
 gem 'seed-fu', '~> 2.3'
 
 group :development, :test do
