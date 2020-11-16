@@ -1,8 +1,12 @@
 module Api
   module V1
     class ApplicationController < ActionController::API
+      include ActionPolicy::Controller
       include Knock::Authenticable
+
       before_action :authenticate_user
+
+      rescue_from ActionPolicy::Unauthorized, with: :render_action_policy_error
 
       # update access token in every each "authication required" requests
       # before_action :authenticate_and_set_token
