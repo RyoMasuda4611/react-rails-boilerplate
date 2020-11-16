@@ -36,7 +36,7 @@ RSpec.describe 'Api::V1::User', type: :request do
     }
 
     context 'without authentication' do
-      it 'creates company owner' do
+      it 'creates new user' do
         expect {
           post api_v1_sign_up_path, headers: header, params: params.to_json
         }.to change(User, :count).by(1)
