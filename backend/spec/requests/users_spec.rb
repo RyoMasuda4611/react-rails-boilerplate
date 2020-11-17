@@ -45,8 +45,8 @@ RSpec.describe 'Api::V1::User', type: :request do
 
         json = JSON.parse(response.body)
 
-        expect(json['data']['attributes']['name']).to eq params[:user][:name]
-        expect(json['data']['attributes']['email']).to eq params[:user][:email]
+        expect(json['name']).to eq params[:user][:name]
+        expect(json['email']).to eq params[:user][:email]
       end
 
       it 'handles errors with wrong password confirmation' do

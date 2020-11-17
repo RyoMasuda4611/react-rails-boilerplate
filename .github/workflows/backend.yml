@@ -4,6 +4,9 @@ on:
   push:
     paths-ignore:
       - 'frontend/**'
+defaults:
+  run:
+    working-directory: ./backend
 
 jobs:
   build:
@@ -42,15 +45,15 @@ jobs:
 
       - name: Bundle install
         run: |
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
       - name: Prepare database
         run: |
-          bin/rails db:create
-          bin/rails db:schema:load
+          rails db:create
+          rails db:schema:load
 
       - name: Run test
-        run: bin/rspec --tag ~type:skip
+        run: rspec --tag ~type:skip
 
       - name: Check by linter
         run: bundle exec rubocop
