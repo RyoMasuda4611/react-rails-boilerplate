@@ -1,12 +1,17 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
         "plugin:@typescript-eslint/recommended",
+        "plugin:jest/recommended",
+        "prettier",
+        "prettier/react",
+        "prettier/@typescript-eslint",
         "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -14,8 +19,9 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12,
-        "sourceType": "module"
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
@@ -29,13 +35,20 @@
         }
     },
     "rules": {
+        "linebreak-style": "off",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
+        "no-console": "off",
         "@typescript-eslint/indent": ["error", 2],
         "@typescript-eslint/prefer-interface": "off",
         "react/jsx-filename-extension": [
-            "error",
-            { "extensions": [".jsx", ".tsx"] }
+          "error",
+          { "extensions": [".jsx", ".tsx"] }
         ],
-        "no-console": "off",
         "react/prop-types": "off",
         "spaced-comment": ["error", "always", { "markers": ["/ <reference"] }]
     }
