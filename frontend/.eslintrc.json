@@ -50,6 +50,10 @@
           { "extensions": [".jsx", ".tsx"] }
         ],
         "react/prop-types": "off",
-        "spaced-comment": ["error", "always", { "markers": ["/ <reference"] }]
+        "spaced-comment": ["error", "always", { "markers": ["/ <reference"] }],
+        "no-param-reassign": ["error", {
+            "props": true, "ignorePropertyModificationsFor": ["config"]
+            // this means you can reassign parameter if valiable name is config EX: api/index.ts
+        }]
     }
 }
